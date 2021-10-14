@@ -1,7 +1,54 @@
 <template>
-  <Tutorial/>
+  <div>
+    <div class="flex flex-row">
+      <div>
+        <fake-ad />
+      </div>
+      <div class="flex flex-1 justify-center items-center flex-col">
+        <h1 class="font-black text-4xl mb-2">Featured</h1>
+        <div class="flex flex-1 justify-center">
+          <div
+            class="bg-white w-96 break-words rounded-md m-2 p-5"
+            v-for="article of articles"
+            :key="article.slug"
+          >
+            <nuxt-link :to="`/history/${article.slug}`"
+              ><h1 class="font-bold text-2xl">
+                {{ article.title }}
+              </h1></nuxt-link
+            >
+            <span class="font-light text-gray-400">
+              By {{ article.author }}</span
+            >
+            <p class="break-words">{{ article.description }}</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <fake-ad />
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
-export default {}
+export default {
+  head() {
+    return { title: 'Home' }
+  },
+  data() {
+    return {
+      articles: [],
+    }
+  },
+
+  async fetch() {
+    this.articles = [
+      await this.$content(
+        'articles',
+        'the-boston-massacre-causes-of-the-revolutionary-war'
+      ).fetch(),
+    ]
+  },
+}
 </script>

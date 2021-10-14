@@ -1,7 +1,9 @@
+import typography from '@tailwindcss/typography'
 export default {
+  telemetry: false,
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'newspaper',
+    titleTemplate: '%s - US Gazette',
     htmlAttrs: {
       lang: 'en'
     },
@@ -12,7 +14,7 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', href: '/logo.svg' }
     ]
   },
 
@@ -44,5 +46,19 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+  },
+  tailwindcss : {
+    viewer: false,
+
+    config:{
+
+      mode: 'jit',
+      plugins: [typography],
+      theme: {extend: {
+        fontFamily: {
+          'newspaper': ["UnifrakturCook"]
+        }
+      }}
+    }
   }
 }
