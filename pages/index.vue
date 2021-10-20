@@ -23,6 +23,7 @@
             <p class="break-words">{{ article.description }}</p>
           </div>
         </div>
+        <nuxt-link class="font-bold italic" to="/browse">Read more</nuxt-link>
       </div>
       <div>
         <lazy-fake-ad />
@@ -46,7 +47,7 @@ export default {
     this.articles = [
       await this.$content(
         'articles',
-        'the-boston-massacre-causes-of-the-revolutionary-war'
+        'articles-of-confederation'
       ).fetch(),
     ]
   },

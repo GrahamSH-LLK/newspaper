@@ -6,7 +6,7 @@
     >
       <div class="mb-3 flex items-center justify-center flex-col">
         <div v-if="article.image" class="max-w-64">
-          <img class="max-w-xl" :src="article.image" />
+          <img class="max-w-xl mb-2" :src="article.image" />
         </div>
 
         <h1 class="font-black font-newspaper text-4xl">{{ article.title }}</h1>
