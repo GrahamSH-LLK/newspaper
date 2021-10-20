@@ -2,13 +2,13 @@
   <div>
     <div class="flex flex-row">
       <div>
-        <fake-ad />
+        <lazy-fake-ad />
       </div>
       <div class="flex flex-1 justify-center items-center flex-col">
         <h1 class="font-black text-4xl mb-2">Featured</h1>
-        <div class="flex flex-1 justify-center">
+        <div class="flex flex-1 justify-center w-7/12">
           <div
-            class="bg-white w-96 break-words rounded-md m-2 p-5"
+            class="bg-gray-100 w-96 break-words rounded-md m-2 p-5"
             v-for="article of articles"
             :key="article.slug"
           >
@@ -25,7 +25,7 @@
         </div>
       </div>
       <div>
-        <fake-ad />
+        <lazy-fake-ad />
       </div>
     </div>
   </div>
