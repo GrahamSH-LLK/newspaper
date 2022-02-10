@@ -14,7 +14,8 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', href: '/logo.svg' }
+      { rel: 'icon', href: '/logo.svg' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap' }
     ]
   },
 
